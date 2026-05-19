@@ -2398,5 +2398,61 @@ void ADroneHUD::DrawPiP()
 		ColorGreen, PX + 6.f, PY + PiPHeight - 16.f,
 		GEngine->GetSmallFont(), 0.9f);
 }
+
+
+
+//input mapping 
+
+  ToggleCamera       →  C
+ToggleInputMode    →  T
+ToggleGimbal       →  G
+ToggleHUD          →  H
+ToggleMinimap      →  M
+ToggleArmLights    →  N
+ToggleBodyLights   →  V
+ToggleMotorPanel   →  1
+ToggleFlightPanel  →  2
+ToggleModePanel    →  3
+ToggleInputPanel   →  4
+ToggleTrail        →  Y
+ClearTrail         →  F
+Brake              →  Space Bar
+Loiter             →  L
+RTL                →  R
+AddWaypoint        →  P
+StartWaypoint      →  O
+ClearWaypoints     →  K
+YawLeft            →  Q
+YawRight           →  E
+KeyYawLeft         →  Z
+KeyYawRight        →  X
+
+
+// build .cs
+
+  using UnrealBuildTool;
+
+public class Drone_Pack : ModuleRules
+{
+	public Drone_Pack(ReadOnlyTargetRules Target) : base(Target)
+	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core",
+			"CoreUObject",
+			"Engine",
+			"InputCore",
+			"RenderCore",
+			"Renderer",
+			"RHI"
+		});
+
+		PrivateDependencyModuleNames.AddRange(new string[]
+		{
+		});
+	}
+}
   
   
